@@ -1,69 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A propos</title>
-  <link rel="stylesheet" href="/pages css/propos.css">
-  <link rel="icon" href="/img/logo_cik.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>600 Strikes – Training Mode</title>
+  <style>
+    :root {
+      --work-color: #ffd700; /* gold */;
+      --break-color: #008b8b; /* dark cyan */;
+      --bg-dark: #0a0a0c;
+      --text-light: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.5s ease;
+    }
+
+    .container {
+      text-align: center;
+      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+      transition: box-shadow 0.5s ease;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      font-weight: 900;
+    }
+
+    #phase {
+      margin-top: 8px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    #timer {
+      margin: 20px 0;
+      font-size: 4.5rem;
+      font-weight: 900;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    }
+
+    /* Progress Bar */
+    #progress-container {
+      width: 100%;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    #progress {
+      height: 12px;
+      width: 0%;
+      background: var(--work-color);
+      border-radius: 8px;
+      transition: width 0.2s linear;
+    }
+
+    /* Controls */
+    button {
+      padding: 10px 18px;
+      margin: 6px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      color: white;
+    }
+
+    #start { background: #007bff; }
+    #pause { background: #444; }
+    #reset { background: #ff4444; }
+
+    #start:hover { background: #005fcc; }
+    #pause:hover { background: #333; }
+    #reset:hover { background: #cc0000; }
+
+    #strikes {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    #level {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+
+    .work-bg {
+      background-image: url("work-bg.jpg");
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+    }
+
+    .break-bg {
+      background-image: url("break-bg.jpg");
+      box-shadow: 0 0 25px rgba(0, 183, 199, 0.5);
+    }
+  </style>
 </head>
-<body>
-  <aside class="sidebar">
-    <img src="/img/logo_cik.png" alt="Club Ibn Khaldoun Logo">
-    <nav>
-      <ul>
-        <li><a href="/pages html/landing.html">Accueil</a></li>
-        <li><a href="/pages html/propos.html">A propos</a></li>
-        <li><a href="">Activite</a></li>
-        <li><a href="/pages html/salma.html">Actualites</a></li>
-        <li><a href="/pages html/Membres.html">Section Membre</a></li>
-        <li><a href="#">Espace d'adhesion</a></li>
-        <li><a href="#">Boutique en ligne</a></li>
-      </ul>
-    </nav>
-  </aside>
-  <header>
-    <h1>Club Ibn Khaldoun</h1>
-  </header>
-  <main>
-    <section class="intro-text">
-      <h2>Histoire De Groupe</h2>
-      <p style="text-transform: lowercase;">
-        DEPUIS NOTRE ACCRÉDITATION PAR LA FACULTÉ DES SCIENCES BEN M'SIK EN 2015 ET PAR L'UNIVERSITÉ HASSAN II EN 2024 ,CLUB CİK POUR L'ACTION SOCIALE ET CULTURELLE EST UN ESPACE DYNAMIQUE OÙ LES MEMBRES SE RÉUNISSENT POUR PROMOUVOIR DES INITIATIVES QUI RENFORCENT LE TISSU SOCIAL DE LEUR COMMUNAUTÉ. CE CLUB ORGANISE DIVERSES ACTIVITÉS, TELLES QUE DES ATELIERS, DES ÉVÉNEMENTS CULTURELS, ET DES PROJETS DE BÉNÉVOLAT, VISANT À SENSIBILISER LES PARTICIPANTS AUX ENJEUX SOCIAUX TOUT EN CÉLÉBRANT LA DIVERSITÉ CULTURELLE.
-        LE CLUB S'ENGAGE À PROMOUVOIR LA DIVERSITÉ, L'INCLUSION ET LE BIEN-ÊTRE DE LA COMMUNAUTÉ ÉTUDIANTE. À TRAVERS DES CAMPAGNES DE SENSIBILISATION, DES ÉVÉNEMENTS CULTURELS, DES ACTIONS CARITATIVES ET DES INITIATIVES DE SOUTIEN. NOS ACTIVITÉS COMPRENNENT DES JEUX SOCIOÉDUCATIFS, DES ATELIERS CULTURELS, DES BÉNÉVOLATS COMMUNAUTAIRES, DES DISCUSSIONS SUR LES ENJEUX SOCIAUX, DES FORMATIONS ET DES MANIFESTATIONS CULTURELLES. EN COLLABORANT AVEC D'AUTRES CLUBS ET ORGANISMES SOCIAL ET CULTUREL, NOUS CÉLÉBRONS LA DIVERSITÉ ET NOUS ENCOURAGEONS L'ENGAGEMENT ÉTUDIANT
-      </p>
-    </section>
-   <section>
-    <h2 id="Objectifs">Objectifs</h2>
-    <table border="2px">
-      <tr>
-        <th ></th>
-      </tr>
-      <tr>
-        <td> Contribuer à l’amélioration de la qualité de vie des
-          personnes vivantes dans un état de précarité,</td>
-      </tr>
-    <tr>
-          <td>Inculquer aux étudiants la culture du bénévolat et de la
-            solidarité sociale.</td>
-    </tr>
-    <tr>
-            <td>Former les étudiants dans le domaine de l’action
-              sociale,</td>
-    </tr>
-    <tr>
-              <td>Sensibiliser les étudiants à l’entrepreneuriat social.</td>
-      </tr>
-      
-    </table>
-   </section>
-   
-  
-     
-      </div>
-  </main>
-  <footer>
-    <p>&copy; 2024 CIK Ibn Khaldoun - Tous droits réservés</p>
-  </footer>
+<body class="work-bg">
+  <div class="container" id="mainBox">
+    <h1>600 STRIKES</h1>
+    <div id="phase">WORK</div>
+    <div id="timer">07:00</div>
+
+    <div id="progress-container">
+      <div id="progress"></div>
+    </div>
+
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <button id="reset">Reset</button>
+
+    <div id="strikes">Strikes: 0 / 600</div>
+    <div id="level">Level: 1 (0 EXP)</div>
+  </div>
+
+  <audio id="beep" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+  <script>
+    const WORK_DURATION = 7 * 60;
+    const BREAK_DURATION = 3 * 60;
+
+    let remaining = WORK_DURATION;
+    let intervalId = null;
+    let isWork = true;
+    let strikes = 0;
+
+    // XP + Leveling
+    let exp = 0;
+    let level = 1;
+
+    const timerEl = document.getElementById("timer");
+    const phaseEl = document.getElementById("phase");
+    const strikesEl = document.getElementById("strikes");
+    const progressEl = document.getElementById("progress");
+    const levelEl = document.getElementById("level");
+    const beep = document.getElementById("beep");
+    const mainBox = document.getElementById("mainBox");
+    const body = document.body;
+
+    function format(t) {
+      const m = String(Math.floor(t / 60)).padStart(2, "0");
+      const s = String(t % 60).padStart(2, "0");
+      return `${m}:${s}`;
+    }
+
+    function updateTimerUI() {
+      timerEl.textContent = format(remaining);
+      const total = isWork ? WORK_DURATION : BREAK_DURATION;
+      progressEl.style.width = `${100 - (remaining / total) * 100}%`;
+    }
+
+    function gainEXP(amount) {
+      exp += amount;
+      const required = level * 100;
+      while (exp >= required) {
+        exp -= required;
+        level++;
+      }
+      levelEl.textContent = `Level: ${level} (${exp} EXP)`;
+    }
+
+    function switchPhase() {
+      beep.play();
+      if (isWork) {
+        // Finished a strike
+        strikes++;
+        strikesEl.textContent = `Strikes: ${strikes} / 600`;
+        gainEXP(20);
+        if (strikes >= 600) {
+          clearInterval(intervalId);
+          alert("ALL 600 STRIKES COMPLETED. YOU ASCENDED.");
+          return;
+        }
+        isWork = false;
+        remaining = BREAK_DURATION;
+        phaseEl.textContent = "BREAK";
+        body.className = "break-bg";
+      } else {
+        // Back to training
+        isWork = true;
+        remaining = WORK_DURATION;
+        phaseEl.textContent = "WORK";
+        body.className = "work-bg";
+      }
+      updateTimerUI();
+    }
+
+    function tick() {
+      if (remaining > 0) {
+        remaining--;
+        updateTimerUI();
+      } else {
+        switchPhase();
+      }
+    }
+
+    document.getElementById("start").onclick = () => {
+      if (!intervalId) intervalId = setInterval(tick, 1000);
+    };
+
+    document.getElementById("pause").onclick = () => {
+      clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    document.getElementById("reset").onclick = () => {
+      clearInterval(intervalId);
+      intervalId = null;
+      remaining = WORK_DURATION;
+      isWork = true;
+      strikes = 0;
+      exp = 0;
+      level = 1;
+      phaseEl.textContent = "WORK";
+      body.className = "work-bg";
+      updateTimerUI();
+      strikesEl.textContent = "Strikes: 0 / 600";
+      levelEl.textContent = "Level: 1 (0 EXP)";
+    };
+
+    updateTimerUI();
+  </script>
 </body>
 </html>
